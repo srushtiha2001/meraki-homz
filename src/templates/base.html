@@ -1,0 +1,205 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Meraki Homz</title>
+    <!-- /SEO Ultimate -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/images/icon.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'assets/images/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/images/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/icon.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Latest compiled and minified CSS -->
+    <link href="{% static 'assets/bootstrap/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/js/bootstrap.min.js' %}">
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- StyleSheet link CSS -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/custom-style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/special-classes.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Header  -->
+<div class="banner_outer">
+    <figure class="light-image mb-0">
+        <img src="{% static 'assets/images/top-lightimage.png' %}" alt="" class="img-fluid">
+    </figure>
+    <header class="header">
+        <div class="main-header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="/"><figure class="mb-0 banner-logo"><img src="{% static 'assets/images/logo.png' %}" alt="" class="img-fluid"></figure></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'webapp:about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'webapp:our_work' %}">Our Works</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'webapp:product' %}">Products</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'webapp:post_list' %}">Blogs</a>
+                            </li>
+                            
+                            
+                            <li class="nav-space nav-item">
+                                <div class="contact-button">
+                                    <a class="contact_us text-decoration-none" href="{% url 'webapp:contact' %}">Contact Us</a>
+                                    <a class="image-button text-decoration-none" href="{% url 'webapp:contact' %}">
+                                        <figure class="arrow mb-0">
+                                            <img src="{% static 'assets/images/arrow.png' %}" alt="" class="img-fluid">
+                                        </figure>
+                                    </a> 
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% block body %}
+
+    {% endblock body %}
+
+
+<!-- Footer -->
+    <section class="footer-section">
+        <div class="container">
+            <div class="middle-portion">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="logo-content">
+                            <a href="/">
+                                <figure class="footer-logo">
+                                    <img src="{% static 'assets/images/logo.png' %}" class="img-fluid" alt="">
+                                </figure>
+                            </a>
+                            <p class="text-white">Choose your style at your comfort Meraki is a End to End interior design solution company located in bangalore, specialized in residential interior design.</p>
+                            <div class="footer-button">
+                                <a class="get_started text-decoration-none" href="{% url 'webapp:contact' %}">Get Started</a>
+                                <a class="image-button text-decoration-none" href="{% url 'webapp:contact' %}">
+                                    <figure class="arrow mb-0">
+                                        <img src="{% static 'assets/images/arrow.png' %}" alt="" class="img-fluid">
+                                    </figure>
+                                </a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="links">
+                            <h4 class="text-white">Contact Info:</h4>
+                            <div class="lower-content">
+                                <figure class="icon">
+                                    <img src="{% static 'assets/images/footer-callicon.png' %}" alt="" class="img-fluid">
+                                </figure>
+                                <div class="content">
+                                    <span class="text-size-16">Call us at:</span>
+                                    <a class="text-size-16 mb-0 text-decoration-none" href="tel:+568925896325">+91-7349012467</a>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <figure class="icon">
+                                    <img src="{% static 'assets/images/footer-locationicon.png' %}" alt="" class="img-fluid">
+                                </figure>
+                                <div class="content">
+                                    <span class="text-size-16">Our Location:</span>
+                                    <p class="text text-size-16">No:207, 2nd floor, above ICICI bank, Ramagondanahalli, Whitefield, Bengaluru, Karnataka 560066</p>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <figure class="icon icon3">
+                                    <img src="{% static 'assets/images/footer-emailicon.png' %}" alt="" class="img-fluid">
+                                </figure>
+                                <div class="content">
+                                    <span class="text-size-16">Email us at:</span>
+                                    <a href="mailto:info@merrakiinteriors.com" class="text-size-16 mb-0 text-decoration-none">hello@merakihomz.in</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-lg-block d-none">
+                        <div class="info">
+                            <h4 class="text-white">Subscribe to Our Newsletter:</h4>
+                            <form method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form_style" placeholder="Enter Your Email Address:" name="email">
+                                    <a class="send fa-sharp fa-solid fa-paper-plane" href="{% url 'webapp:contact' %}"></a>
+                                </div>
+                            </form>
+                           
+                            <div class="social-icons position-relative">
+                                <ul class="list-unstyled mb-0 p-0 position-absolute">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100088716128424" class="text-decoration-none"><i class="fa-brands fa-facebook social-networks"></i></a></li>
+                                    <!--<li><a href="" class="text-decoration-none"><i class="fa-brands fa-twitter social-networks"></i></a></li> -->
+                                    <li><a href="https://www.instagram.com/merakihomz_blr/" class="text-decoration-none"><i class="fa-brands fa-instagram social-networks"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/meraki-homz/" class="text-decoration-none"><i class="fa-brands fa-linkedin social-networks"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <figure class="footer-image mb-0">
+            <img src="{% static 'assets/images/footer-rightimage.png' %}" alt="" class="img-fluid">
+        </figure>
+        <!--footer area-->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-size-14">Copyright © 2023 merakihomz All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest compiled JavaScript -->
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"> </script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"> </script>
+    <script src="{% static 'assets/js/video_link.js' %}"></script>
+    <script src="{% static 'assets/js/video.js' %}"></script>
+    <script src="{% static 'assets/js/counter.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+    <script src="{% static 'assets/js/custom-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/animation_links.js' %}"></script>
+    <script src="{% static 'assets/js/animation.js' %}"></script>
+    </body>
+    </html>

@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block body %}
+
+
+<section class="banner-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12 order-lg-1 order-2 banner-column">
+                <div class="banner_content" data-aos="fade-left">
+                    <div class="content">
+                        <h1>About Us</h1>
+                       
+                       <!--- <div class="box">
+                            <span class="mb-0">Home</span>
+                            <span class="mb-0 dash">-</span>
+                            <span class="mb-0 box_span">About</span>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
+                <div class="banner_wrapper">
+                    <figure class="sub-bannerimage mb-0" data-aos="fade-up">
+                        <img src="{% static 'assets/images/about-bannerimage-new.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- About us page -->
+<section class="aboutpage-section about-section">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="aboutpage_wrapper">
+                <figure class="aboutpage-image1 mb-0" data-aos="fade-down">
+                    <img src="{% static 'assets/images/aboutpage-image1-new.png' %}" alt="" class="img-fluid">
+                </figure>
+                <div class="badge c-black" id="badge">
+                    <span class="badge__char"> </span>
+                    <span class="badge__char badge__char1">.</span>
+                    <span class="badge__char"> </span>
+                    <span class="badge__char">M</span>
+                    <span class="badge__char">E</span>
+                    <span class="badge__char">R</span>
+                    <span class="badge__char">A</span>	
+                    <span class="badge__char">K</span>	
+                    <span class="badge__char">I</span>		
+                    <span class="badge__char"></span>	
+                    <span class="badge__char badge__char1">.</span>	
+                    <span class="badge__char"> </span>		
+                    <span class="badge__char">H</span>		
+                    <span class="badge__char">O</span>		
+                    <span class="badge__char">M</span>		
+                    <span class="badge__char">Z</span>		
+                   <!-- <span class="badge__char"></span>
+                    <span class="badge__char"></span>		
+                    <span class="badge__char"></span>
+                    <span class="badge__char"></span>
+                    <span class="badge__char"></span>
+                    <span class="badge__char"> </span>
+                    <span class="badge__char">-</span>
+                    <span class="badge__char"> </span>		
+                    <span class="badge__char"></span>		
+                    <span class="badge__char">/<span>		
+                    <span class="badge__char"></span>		
+                    <span class="badge__char"></span>
+                    <span class="badge__char"></span>		
+                    <span class="badge__char"> </span>
+                    <span class="badge__char"></span>
+                    <span class="badge__char"></span>
+                    <span class="badge__char"></span>		
+                    <span class="badge__char"></span>-->
+                    <figure class="about-logoimage mb-0">
+                        <img src="{% static 'assets/images/about-logoimage-new.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </div>
+                <figure class="aboutpage-image2 mb-0" data-aos="fade-up">
+                    <img src="{% static 'assets/images/aboutpage-image2-new.png' %}" alt="" class="img-fluid">
+                </figure>                    
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="aboutpage_content" data-aos="fade-right">
+                <h6>About Us</h6>
+                <h2>Best Interior Designers Architectures for You.</h2>
+                <p>Choose your style at your comfort Meraki is a full-service interior design company located in bangalore, specialized in residential interior design.<br>
+
+                    Whether you need a quick refresh of furniture, paint or wallpapaer or an extensive full house renovation, we can provide the expertise to make sure the project runs smoothly and gives you the best results possible with in your budget.<br>
+                    <br>
+                    
+                    We have the best agreements with local craftsmen and subcontractors, so that you can be assured that your project is completed with the branded plywood and quality hardware. </p>
+                <p class="text2">ARCHITECTURE | INTERIOR DESIGN | HOME DECOR | FURNISHINGS</p>
+                <div class="progress-outer">
+                    <div class="progress-inner">
+                        <div class="box">
+                            <div class="chart" data-percent="85" data-scale-color="#ffffff">85%</div>
+                            <h6>Interior Design</h6>
+                        </div>
+                        <div class="box">
+                            <div class="chart" data-percent="78" data-scale-color="#ffffff">78%</div>
+                            <h6>Architec Services</h6>
+                        </div>
+                        <div class="box">
+                            <div class="chart" data-percent="64" data-scale-color="#ffffff">64%</div>
+                            <h6>Idea & Planning</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Clients -->
+<section class="partner-section">
+<figure class="light-image mb-0">
+    <img src="{% static 'assets/images/top-lightimage.png' %}" alt="" class="img-fluid">
+</figure>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="partner_content" data-aos="fade-right">
+                
+                <h2>Our Trusted Clients</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="owl-carousel owl-theme">
+             {% for details in client_list %}
+            <div class="item">
+                <div class="box">
+                    <figure class="partner mb-0">
+                        <img src="{{details.image.url}}" class="img-fluid" alt="">
+                    </figure>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+    </div>
+</div>
+</section>
+<!-- Process -->
+<section class="process-section">
+<section class="process-section">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="process_content" data-aos="fade-up">
+                <h2>OUR FEATURES</h2>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+            <div class="box-content">
+                <figure class="icon mb-0">
+                    <img src="{% static 'assets/images/process-icon1.png' %}" class="img-fluid" alt="">
+                </figure>
+                <span>01</span>
+                <h5 class="text-white">Interior Design</h5>
+                <p class="text-size-18 mb-0">Meraki strives to provide top-notch residential interior solutions. We specialize in providing end-to-end services..</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+            <div class="box-content">
+                <figure class="icon mb-0">
+                    <img src="{% static 'assets/images/process-icon2.png' %}" class="img-fluid" alt="">
+                </figure>
+                <span>02</span>
+                <h5 class="text-white">Renovation Design</h5>
+                <p class="text-size-18 mb-0">Does your home feel outdated and lack sufficient space? If yes, we've got a fantastic idea for you: go for a home renovation today..</p>
+            </div>               
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+            <div class="box-content">
+                <figure class="icon mb-0">
+                    <img src="{% static 'assets/images/process-icon3.png' %}" class="img-fluid" alt="">
+                </figure>
+                <span>03</span>
+                <h5 class="text-white">Soft Furnishing</h5>
+                <p class="text-size-18 mb-0">Lighting and soft furnishing adds the right amount of wow factor in your interiors. You are born to shine and so does your interior..</p>
+            </div>
+        </div>         
+    </div>
+</div>
+</section>
+<!-- Journey -->
+<section class="journey-section">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="journey_content" data-aos="fade-right">
+                <h6>Work With Us</h6>
+                <h2>Start Your Customer Journey With Us.</h2>
+            </div>
+            <div class="journey-button">
+                <a class="get_started text-decoration-none" href="{% url 'webapp:contact' %}">Get Started</a>
+                <a class="image-button text-decoration-none" href="{% url 'webapp:contact' %}">
+                    <figure class="arrow mb-0">
+                        <img src="{% static 'assets/images/arrow.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </a> 
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+{% endblock body %}

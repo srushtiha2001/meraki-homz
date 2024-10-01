@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+<section class="banner-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12 order-lg-1 order-2 banner-column">
+                <div class="banner_content" data-aos="fade-left">
+                    <div class="content">
+                        <h1>Blog</h1>
+                        
+                        <!--<div class="box">
+                            <span class="mb-0">Home</span>
+                            <span class="mb-0 dash">-</span>
+                            <span class="mb-0 box_span">Blog</span>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
+                <div class="banner_wrapper">
+                    <figure class="sub-bannerimage mb-0" data-aos="fade-up">
+                        <img src="{% static 'assets/images/blog-bannerimage-new.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Blog -->
+<section class="blogpage-section">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="blog_content position-relative" data-aos="fade-right">
+                <h2>From Our Blog</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+        {% for post in post_list%}
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="blog-box" data-aos="fade-up">
+                <figure class="blog-image mb-0">
+                    <img src="{{post.image.url}}" alt="" class="img-fluid">
+                </figure>
+                <div class="lower-portion">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="text-size-14 text-mr">By : Admin</span>
+                    <i class="tag-mb fa-solid fa-tag"></i>
+                    <span class="text-size-14">{{post.category}}</span>
+                    <h5><a href="{% url 'webapp:post_detail' post.id %}">{{post}}</a></h5>
+                </div>
+                <div class="button-portion">
+                    <div class="date">
+                        <i class="mb-0 calendar-ml fa-solid fa-calendar-days"></i>
+                        <span class="mb-0 text-size-14">{{details.created.date}}</span>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+       
+    </div>
+</div>
+</section>
+<!-- Testimonial -->
+<section class="testimonial-section">
+    <figure class="light-image mb-0">
+        <img src="{% static 'assets/images/top-lightimage.png' %}" alt="" class="img-fluid">
+    </figure>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="testimonial_content" data-aos="fade-right">
+                    <h6>Testimonials</h6>
+                    <!--<h2>Trusted By Over 30,000 Worldwide Customers Since 1998</h2> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel owl-theme">
+               
+              
+                {% for details in testimonials %}
+                <div class="item">
+                    <div class="box">
+                       <!-- <div class="image">
+                            <figure class="testimonial-image1 mb-0">
+                                <img src="{{details.image.url}}" alt="" class="img-fluid">
+                            </figure>                    
+                            <figure class="testimonial-image2 mb-0">
+                                <img src="{{details.image.url}}" alt="" class="img-fluid">
+                            </figure>                    
+                            <figure class="testimonial-image3 mb-0">
+                                <img src="{% static 'assets/images/testimonial-5.png' %}" alt="" class="img-fluid">
+                            </figure>                    
+                            <figure class="testimonial-image4 mb-0">
+                                <img src="{% static 'assets/images/testimonial-3.png' %}" alt="" class="img-fluid">
+                            </figure>
+                            <figure class="testimonial-image5 mb-0">
+                                <img src="{% static 'assets/images/testimonial-4.png' %}" alt="" class="img-fluid">
+                            </figure>
+                            <figure class="quote-icon mb-0">
+                                <img src="{% static 'assets/images/quote-icon.png' %}" class="img-fluid" alt="">
+                            </figure>
+                        </div>     -->               
+                        <div class="box-content">
+                            <p class="text-size-18">
+                                {{details.content}}
+                              </p>
+                            <ul class="list-unstyled mb-0">
+                                <li><a href=""><i class="fa-solid fa-star"></i></a> </li>
+                                <li><a href=""><i class="fa-solid fa-star"></i></a> </li>
+                                <li><a href=""><i class="fa-solid fa-star"></i></a> </li>
+                                <li><a href=""><i class="fa-solid fa-star"></i></a> </li>
+                                <li><a href=""><i class="fa-solid fa-star"></i></a> </li>
+                            </ul>
+                            <div class="lower-portion">
+                                <span class="text-white text-size-16">{{details.name}}</span>
+                                <span class="text-size-14">Happy Customer</span>
+                                <figure class="quote-image mb-0">
+                                    <img src="{{details.image.url}}" class="img-fluid" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+{% endblock body %}

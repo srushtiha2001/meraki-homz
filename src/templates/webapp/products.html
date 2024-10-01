@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+<section class="banner-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12 order-lg-1 order-2 banner-column">
+                <div class="banner_content" data-aos="fade-left">
+                    <div class="content">
+                        <h1>Our Products</h1>
+                        
+                        <!--<div class="box">
+                            <span class="mb-0">Home</span>
+                            <span class="mb-0 dash">-</span>
+                            <span class="mb-0 box_span">Services</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
+                <div class="banner_wrapper">
+                    <figure class="sub-bannerimage mb-0" data-aos="fade-up">
+                        <img src="{% static 'assets/images/product-bannerimage-new.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Service -->
+<section class="servicepage-section">
+<div class="container">
+    <div class="row" data-aos="fade-up">
+
+
+        {% for details in product_list  %}
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="service-box">
+                <div class="box-image">
+                    <figure class="mb-0 servicepage-image">
+                        <a href ="{{details.image.url}}"> <img src="{{details.image.url}}" class="img-fluid" alt=""></a>
+                    </figure>
+                    
+                </div>
+                <div class="box-content">
+                    <h5 class="text-white">{{details.category_name}}</h5>
+                    <p class="text-size-16">{{details.description}}</p>
+                    <a class="read_more text-decoration-none" href="{% url 'webapp:product_detail' details.id %}">Read More
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div> 
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+</section>
+<!-- Successful work -->
+<section class="work-section">
+<figure class="light-image mb-0">
+    <img src="{% static 'assets/images/top-lightimage.png' %}" alt="" class="img-fluid">
+</figure>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="work_content">
+                <div class="year">
+                    <span class="value counter">10</span>
+                    <sup class="mb-0 plus">+</sup>
+                </div>
+                <h2>Years of Successful Work in Market</h2>
+                <div class="discover-button">
+                    <a class="discover_more text-decoration-none" href="{% url 'webapp:our_work' %}">Discover More</a>
+                    <a class="image-button text-decoration-none" href="{% url 'webapp:our_work' %}">
+                        <figure class="arrow mb-0">
+                            <img src="{% static 'assets/images/arrow.png' %}" alt="" class="img-fluid">
+                        </figure>
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="work_wrapper">
+                <figure class="work-image mb-0" data-aos="fade-right">
+                    <img src="{% static 'assets/images/work-image-new1.png' %}" alt="" class="img-fluid">
+                </figure>
+                <figure class="work-imagebackground mb-0" data-aos="fade-up">
+                    <img src="{% static 'assets/images/work-imagebackground-new1.png' %}" alt="" class="img-fluid">
+                </figure>
+            </div> 
+        </div>
+    </div>
+</div>
+</section>
+<!-- Journey -->
+<section class="journey-section">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="journey_content" data-aos="fade-right">
+                <h6>Work With Us</h6>
+                <h2>Start Your Customer Journey With Us.</h2>
+            </div>
+            <div class="journey-button">
+                <a class="get_started text-decoration-none" href="{% url 'webapp:contact' %}">Get Started</a>
+                <a class="image-button text-decoration-none" href="{% url 'webapp:contact' %}">
+                    <figure class="arrow mb-0">
+                        <img src="{% static 'assets/images/arrow.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </a> 
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+{% endblock body %}

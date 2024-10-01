@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% load bootstrap4 %}
+
+{% block body %}
+
+
+
+<section class="banner-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12 order-lg-1 order-2 banner-column">
+                <div class="banner_content" data-aos="fade-left">
+                    <div class="content">
+                        <h1>Contact Us</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-2 order-1">
+                <div class="banner_wrapper">
+                    <figure class="sub-bannerimage mb-0" data-aos="fade-up">
+                        <img src="{% static 'assets/images/contact-bannerimage-new.png' %}" alt="" class="img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Portfolio -->
+<section class="portfolio-section">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="subheading" data-aos="fade-right">
+                <form  action="" method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form contact_form %}
+                    {% buttons %}
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    {% endbuttons %}
+
+                </form>
+            </div>
+        </div>
+    </div>
+   
+
+   
+        <div class="tab-content">
+            <div id="all" class="tab-pane fade in active show">
+                <div class="row position-relative" data-aos="fade-up">
+                    {% for details in work_list %}
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                        <div class="image">
+                            <figure class="tab-image mb-0">
+                                <img src="{{details.category_image.url}}" class="img-fluid" alt="">
+                            </figure>
+                            <div class="box-content">
+                                <div class="content">
+                                    <span class="text-white text-size-16">MERAKI</span>
+                                    <h4 class="text-white">{{details.category_name}}</h4>
+                                    <a class="text-decoration-none" href="{% url 'webapp:our_work_detail' details.id %}">
+                                        <figure class="arrow mb-0">
+                                            <img src="{% static 'assets/images/arrow.png' %}" alt="" class="img-fluid">
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    {% endfor %}
+                </div>
+            </div>  
+        </div>
+       
+   
+</div>
+</section>
+<!-- Testimonial -->
+<section class="testimonial-section">
+<figure class="light-image mb-0">
+    <img src="{% static 'assets/images/top-lightimage.png' %}" alt="" class="img-fluid">
+</figure>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="map-container map-fullwidth">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d497693.37040946196!2d77.73627!3d12.957164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1378c8d47d43%3A0xf7389d42acdf0d27!2sMeraki%20Homz%20-%20Aristo%20Wardrobes%20and%20End%20to%20End%20Home%20interiors%20Bangalore!5e0!3m2!1sen!2sus!4v1691484808216!5m2!1sen!2sus" width="1100" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    
+</div>
+</section>
+
+
+
+{% endblock body %}
